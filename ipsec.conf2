@@ -1,0 +1,26 @@
+# ipsec.conf - strongSwan IPsec configuration file
+
+# basic configuration
+
+config setup
+        # strictcrlpolicy=yes
+        # uniqueids = no
+
+# Add connections here.
+
+# Sample VPN connections
+
+conn gre-tunnel
+      left=10.5.5.2
+      leftprotoport=gre
+      right=10.5.5.1
+      rightprotoport=gre
+      authby=secret
+      pfs=no
+#conn sample-with-ca-cert
+#      leftsubnet=10.1.0.0/16
+#      leftcert=myCert.pem
+#      right=192.168.0.2
+#      rightsubnet=10.2.0.0/16
+#      rightid="C=CH, O=strongSwan Project CN=peer name"
+#      auto=start
